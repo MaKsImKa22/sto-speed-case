@@ -1,0 +1,15 @@
+{
+  "measured": "2026-10-25, PageSpeed Insights (pagespeed.web.dev)",
+  "before": {
+    "report": "https://pagespeed.web.dev/analysis/https-maksimka22-github-io-sto-speed-case-before/l5n3f2osvt",
+    "mobile": { "performance": 65, "fcp": "3,6 с", "lcp": "14,9 с", "tbt": "0 мс", "cls": 0, "speed_index": "4,9 с", "total_kib": 2843 },
+    "desktop": { "performance": 81, "fcp": "0,8 с", "lcp": "3,2 с", "tbt": "20 мс", "cls": 0, "speed_index": "1,1 с", "total_kib": 3092 },
+    "chrome_first_view": { "requests": 49, "transfer_kb": 2727, "js_files": 16, "css_files": 19 }
+  },
+  "after": {
+    "report": "https://pagespeed.web.dev/analysis/https-maksimka22-github-io-sto-speed-case-after/itbujezisg",
+    "mobile": { "performance": 100, "fcp": "0,8 с", "lcp": "1,1 с", "tbt": "0 мс", "cls": 0, "speed_index": "0,8 с" },
+    "desktop": { "performance": 100, "fcp": "0,2 с", "lcp": "0,3 с", "tbt": "0 мс", "cls": 0, "speed_index": "0,3 с" },
+    "chrome_first_view": { "requests": 5, "transfer_kb": 188, "js_files": 0, "css_files": 0 }
+  }
+}

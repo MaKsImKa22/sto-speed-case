@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="uk">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Кейс: сторінка з Elementor → легка версія, PageSpeed 65 → 100</title>
+	<meta name="description" content="Переробка сторінки автосервісу з Elementor на легкий HTML/CSS: PageSpeed на мобільному з 65 до 100, LCP з 14,9 до 1,1 с, вага з 2,7 МБ до 188 КБ.">
+	<meta name="robots" content="noindex">
+	<style>
+		:root { --ink: #111827; --muted: #4b5563; --line: #e5e7eb; --soft: #f9fafb; --accent: #ea580c; --good: #15803d; --bad: #b91c1c; }
+		*, *::before, *::after { box-sizing: border-box; }
+		body { margin: 0; color: var(--ink); background: #fff; font: 400 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+		a { color: #c2410c; }
+		img { max-width: 100%; height: auto; display: block; }
+		h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; }
+		h1 { font-size: clamp(30px, 4.6vw, 46px); }
+		h2 { font-size: 28px; margin-top: 8px; }
+		.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+		.hero { padding: 56px 0 36px; background: linear-gradient(180deg, #fff7ed, #fff); }
+		.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+		.lead { color: var(--muted); max-width: 720px; font-size: 19px; }
+		.section { padding: 44px 0; }
+		.big { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 28px 0 0; padding: 0; list-style: none; }
+		.big li { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+		.big span { display: block; color: var(--muted); font-size: 14px; }
+		.big b { display: block; font-size: 30px; line-height: 1.2; }
+		.big s { color: var(--bad); font-weight: 600; font-size: 18px; text-decoration-thickness: 2px; }
+		.big em { font-style: normal; color: var(--good); }
+		.links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+		.btn { display: inline-block; padding: 12px 20px; border-radius: 999px; border: 2px solid var(--accent); color: var(--accent); font-weight: 700; text-decoration: none; }
+		.btn-solid { background: var(--accent); color: #fff; }
+		.table-wrap { overflow-x: auto; }
+		table { width: 100%; border-collapse: collapse; font-size: 16px; min-width: 560px; }
+		th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+		th { background: var(--soft); font-size: 14px; color: var(--muted); }
+		td.bad { color: var(--bad); font-weight: 600; }
+		td.good { color: var(--good); font-weight: 700; }
+		.shots { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+		.shots figure { margin: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+		.shots figcaption { padding: 10px 14px; font-weight: 600; background: var(--soft); }
+		ul.done li { margin-bottom: 8px; }
+		.note { background: var(--soft); border-left: 4px solid var(--accent); padding: 16px 20px; border-radius: 8px; color: var(--muted); font-size: 15px; }
+		footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+		@media (max-width: 760px) {
+			.big { grid-template-columns: 1fr 1fr; }
+			.shots { grid-template-columns: 1fr; }
+		}
+	</style>
+</head>
+<body>
+	<header class="hero">
+		<div class="wrap">
+			<span class="eyebrow">Кейс · оптимізація швидкості</span>
+			<h1>Сторінка автосервісу: з Elementor на легкий HTML/CSS</h1>
+			<p class="lead">Та сама сторінка, той самий дизайн і текст. Замість конструктора — чиста верстка, замість фото «з телефона» — оптимізовані зображення. Заміряно в Google PageSpeed Insights.</p>
+			<ul class="big">
+				<li><span>PageSpeed, мобільний</span><b><s>65</s> → <em>100</em></b></li>
+				<li><span>Головне зображення (LCP)</span><b><s>14,9 с</s> → <em>1,1 с</em></b></li>
+				<li><span>Вага першого екрана</span><b><s>2,7 МБ</s> → <em>188 КБ</em></b></li>
+				<li><span>Запитів до сервера</span><b><s>49</s> → <em>5</em></b></li>
+			</ul>
+			<div class="links">
+				<a class="btn" href="before/">Сторінка «до» (Elementor)</a>
+				<a class="btn btn-solid" href="after/">Сторінка «після»</a>
+				<a class="btn" href="https://github.com/MaKsImKa22/sto-speed-case">Код на GitHub</a>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section class="section">
+			<div class="wrap">
+				<h2>Результати PageSpeed Insights</h2>
+				<div class="table-wrap">
+					<table>
+						<thead>
+							<tr><th>Показник</th><th>До, мобільний</th><th>Після, мобільний</th><th>До, комп’ютер</th><th>Після, комп’ютер</th></tr>
+						</thead>
+						<tbody>
+							<tr><td>Ефективність</td><td class="bad">65</td><td class="good">100</td><td class="bad">81</td><td class="good">100</td></tr>
+							<tr><td>Largest Contentful Paint</td><td class="bad">14,9 с</td><td class="good">1,1 с</td><td class="bad">3,2 с</td><td class="good">0,3 с</td></tr>
+							<tr><td>First Contentful Paint</td><td class="bad">3,6 с</td><td class="good">0,8 с</td><td>0,8 с</td><td class="good">0,2 с</td></tr>
+							<tr><td>Speed Index</td><td class="bad">4,9 с</td><td class="good">0,8 с</td><td>1,1 с</td><td class="good">0,3 с</td></tr>
+							<tr><td>Total Blocking Time</td><td>0 мс</td><td>0 мс</td><td>20 мс</td><td class="good">0 мс</td></tr>
+							<tr><td>Cumulative Layout Shift</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+						</tbody>
+					</table>
+				</div>
+				<p>Повні звіти: <a href="https://pagespeed.web.dev/analysis/https-maksimka22-github-io-sto-speed-case-before/l5n3f2osvt">«до»</a> і <a href="https://pagespeed.web.dev/analysis/https-maksimka22-github-io-sto-speed-case-after/itbujezisg">«після»</a>.</p>
+
+				<div class="shots">
+					<figure>
+						<figcaption>До: 65 на мобільному</figcaption>
+						<img src="results/pagespeed-before-mobile.jpg" width="1536" height="686" alt="PageSpeed Insights сторінки «до»: 65 балів, LCP 14,9 с" loading="lazy">
+					</figure>
+					<figure>
+						<figcaption>Після: 100 на мобільному</figcaption>
+						<img src="results/pagespeed-after-mobile.jpg" width="1536" height="686" alt="PageSpeed Insights сторінки «після»: 100 балів, LCP 1,1 с" loading="lazy">
+					</figure>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" style="background:#f9fafb">
+			<div class="wrap">
+				<h2>Що було не так і що зроблено</h2>
+				<ul class="done">
+					<li><b>Фото «з телефона» 4000×2667, по 4 МБ.</b> Стиснув і зменшив до 800 і 1600 px (30–100 КБ), браузер сам обирає розмір під екран (<code>srcset</code>).</li>
+					<li><b>Головне фото було CSS-фоном,</b> тому браузер знаходив його пізно (LCP 14,9 с). Зробив звичайним <code>&lt;img&gt;</code> з <code>fetchpriority="high"</code> і попереднім завантаженням.</li>
+					<li><b>16 JS-файлів:</b> jQuery, Swiper, скрипти Elementor, анімації. Прибрав увесь JavaScript: акордеон на <code>&lt;details&gt;</code>, галерея гортається на CSS, лічильники — просто числа.</li>
+					<li><b>19 CSS-файлів і Google Fonts.</b> Один невеликий вбудований CSS і системні шрифти.</li>
+					<li><b>Вбудована Google-карта</b> завантажувала сотні кілобайтів. Замінив блоком з адресою і кнопкою «Відкрити в Google Maps».</li>
+					<li><b>Фото нижче першого екрана</b> тепер вантажаться лише при прокручуванні (<code>loading="lazy"</code>), у всіх задані розміри, тож сторінка не «стрибає».</li>
+					<li><b>Бонус для локального SEO:</b> розмітка <code>AutoRepair</code> (Schema.org) з адресою і графіком.</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="wrap">
+				<h2>Чесно про умови</h2>
+				<p class="note">
+					Автосервіс вигаданий, фото — згенеровані заглушки з підписом «Фото: …». Сторінку «до» я зібрав сам у справжньому Elementor 4.3.5 на WordPress 7, як це роблять власники бізнесу, і опублікував статичну копію, щоб обидві сторінки заміряти однаково на GitHub Pages.
+					Обидві сторінки закриті від індексації (<code>noindex</code>), тому оцінка «SEO» в PageSpeed занижена в обох однаково. Результати PageSpeed трохи відрізняються від заміру до заміру.
+				</p>
+				<p>Як зроблено: Claude Code (AI-асистент) для верстки й скриптів, локальний WordPress + Elementor для сторінки «до», Google PageSpeed Insights для замірів. Час — близько 3 годин.</p>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="wrap">Демо-кейс для портфоліо · <a href="https://github.com/MaKsImKa22">MaKsImKa22</a></div>
+	</footer>
+</body>
+</html>
