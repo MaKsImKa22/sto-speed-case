@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="uk">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>СТО «Мотор» — ремонт авто в Луцьку</title>
+	<meta name="description" content="Діагностика, ремонт ходової, заміна оливи та шиномонтаж у Луцьку. Працюємо з усіма марками, гарантія 12 місяців.">
+	<meta name="robots" content="noindex">
+	<link rel="preload" as="image" href="img/hero-800.jpg" imagesrcset="img/hero-800.jpg 800w, img/hero-1600.jpg 1600w" imagesizes="100vw" fetchpriority="high">
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "AutoRepair",
+		"name": "СТО «Мотор»",
+		"telephone": "+380 00 000 00 00",
+		"address": { "@type": "PostalAddress", "streetAddress": "вул. Прикладна, 5", "addressLocality": "Луцьк", "addressCountry": "UA" },
+		"openingHours": "Mo-Sa 08:00-19:00",
+		"priceRange": "₴₴"
+	}
+	</script>
+	<style>
+		:root { --ink: #111827; --muted: #4b5563; --accent: #ea580c; --accent-dark: #c2410c; --soft: #f3f4f6; --dark: #111827; }
+		*, *::before, *::after { box-sizing: border-box; }
+		body { margin: 0; color: var(--ink); background: #fff; font: 400 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+		img { display: block; max-width: 100%; height: auto; }
+		h1, h2, h3 { line-height: 1.15; margin: 0 0 .5em; font-weight: 800; letter-spacing: -.01em; }
+		h2 { font-size: clamp(28px, 4vw, 38px); text-align: center; margin-bottom: 36px; }
+		h3 { font-size: 20px; }
+		p { margin: 0 0 1em; }
+		a { color: var(--accent-dark); }
+		.wrap { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+		.section { padding: 64px 0; }
+		.soft { background: var(--soft); }
+		.btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border-radius: 40px; background: var(--accent); color: #fff; font-weight: 700; text-decoration: none; }
+		.btn:hover { background: var(--accent-dark); color: #fff; }
+		.btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+		.topbar { background: var(--dark); color: #e5e7eb; font-size: 15px; }
+		.topbar ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 28px; margin: 0; padding: 8px 20px; list-style: none; }
+		.topbar svg { width: 14px; height: 14px; fill: #f97316; margin-right: 6px; vertical-align: -1px; }
+		.topbar a { color: inherit; text-decoration: none; }
+
+		.hero { position: relative; display: grid; place-items: center; min-height: 90vh; color: #fff; text-align: center; overflow: hidden; }
+		.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+		.hero::after { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, .55); }
+		.hero .wrap { position: relative; z-index: 1; }
+		.hero h1 { font-size: clamp(34px, 6vw, 56px); }
+		.hero p { color: #f3f4f6; max-width: 640px; margin: 0 auto 28px; }
+
+		.counters { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; margin: 0; padding: 0; list-style: none; }
+		.counters b { display: block; font-size: 52px; line-height: 1.1; color: var(--accent); }
+		.counters span { color: var(--muted); }
+
+		.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; }
+		.cards img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; margin-bottom: 18px; }
+		.cards h3 { color: #0284c7; font-weight: 600; }
+		.cards p, .why p { color: var(--muted); }
+
+		.why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; }
+		.why svg { width: 48px; height: 48px; fill: var(--accent); margin-bottom: 14px; }
+
+		.gallery { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 40px) / 3); gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
+		.gallery img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; scroll-snap-align: start; }
+
+		.faq { max-width: 860px; margin: 0 auto; border: 1px solid #e5e7eb; }
+		.faq details + details { border-top: 1px solid #e5e7eb; }
+		.faq summary { padding: 16px 20px; cursor: pointer; color: #0284c7; font-weight: 600; }
+		.faq details[open] summary { color: #16a34a; }
+		.faq details p { padding: 0 20px 16px; margin: 0; color: var(--muted); }
+
+		.map { display: grid; place-items: center; gap: 14px; min-height: 260px; margin-bottom: 28px; padding: 32px; text-align: center; border-radius: 16px;
+			background: repeating-linear-gradient(45deg, #e5e7eb 0 2px, #f9fafb 2px 22px); }
+		.map b { font-size: 20px; }
+		.center { text-align: center; }
+
+		footer { background: var(--dark); color: #9ca3af; text-align: center; padding: 30px 20px; font-size: 15px; }
+
+		@media (max-width: 760px) {
+			.counters { grid-template-columns: 1fr 1fr; }
+			.cards, .why { grid-template-columns: 1fr; }
+			.gallery { grid-auto-columns: 85%; }
+			.section { padding: 48px 0; }
+			.hero { min-height: 80vh; }
+		}
+	</style>
+</head>
+<body>
+	<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+		<symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+		<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+		<symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 10.4 3.5 2.1-.8 1.3L11 13V7h2z"/></symbol>
+	</svg>
+
+	<div class="topbar">
+		<ul>
+			<li><a href="tel:+380000000000"><svg><use href="#i-phone"/></svg>+380 00 000 00 00</a></li>
+			<li><svg><use href="#i-pin"/></svg>вул. Прикладна, 5, Луцьк</li>
+			<li><svg><use href="#i-clock"/></svg>Пн–Сб 8:00–19:00</li>
+		</ul>
+	</div>
+
+	<main>
+		<section class="hero">
+			<img src="img/hero-800.jpg" srcset="img/hero-800.jpg 800w, img/hero-1600.jpg 1600w" sizes="100vw" width="1600" height="1067" alt="" fetchpriority="high">
+			<div class="wrap">
+				<h1>СТО «Мотор» — ремонт авто в Луцьку</h1>
+				<p>Діагностика, ремонт ходової, заміна оливи та шиномонтаж. Працюємо з усіма марками, даємо гарантію на роботи.</p>
+				<a class="btn" href="tel:+380000000000"><svg><use href="#i-phone"/></svg>Записатися на ремонт</a>
+			</div>
+		</section>
+
+		<section class="section">
+			<ul class="wrap counters">
+				<li><b>15</b><span>років досвіду</span></li>
+				<li><b>12000+</b><span>задоволених клієнтів</span></li>
+				<li><b>8</b><span>робочих боксів</span></li>
+				<li><b>12 міс.</b><span>гарантія на роботи</span></li>
+			</ul>
+		</section>
+
+		<section class="section">
+			<div class="wrap">
+				<h2>Наші послуги</h2>
+				<div class="cards">
+					<article>
+						<img src="img/diagnostics-800.jpg" width="800" height="533" alt="Комп’ютерна діагностика автомобіля" loading="lazy" decoding="async">
+						<h3>Комп’ютерна діагностика</h3>
+						<p>Знаходимо несправності за 30 хвилин. Від 400 грн.</p>
+					</article>
+					<article>
+						<img src="img/tires-800.jpg" width="800" height="533" alt="Шиномонтаж" loading="lazy" decoding="async">
+						<h3>Шиномонтаж</h3>
+						<p>Сезонна заміна шин, балансування, зберігання. Від 600 грн.</p>
+					</article>
+					<article>
+						<img src="img/oil-800.jpg" width="800" height="533" alt="Заміна оливи" loading="lazy" decoding="async">
+						<h3>Заміна оливи</h3>
+						<p>Олива та фільтри з гарантією оригінальності. Від 300 грн.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="section soft">
+			<div class="wrap">
+				<h2>Чому обирають нас</h2>
+				<div class="why">
+					<div>
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5z"/></svg>
+						<h3>Гарантія 12 місяців</h3>
+						<p>На всі роботи та встановлені запчастини.</p>
+					</div>
+					<div>
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.7 19 13.6 9.9c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+						<h3>Сучасне обладнання</h3>
+						<p>Підйомники, стенд розвалу-сходження, сканери.</p>
+					</div>
+					<div>
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22zm1 17v2h-2v-2c-2-.3-3.5-1.6-3.6-3.5h2.1c.1 1 1 1.6 2.5 1.6 1.6 0 2.1-.8 2.1-1.3 0-.7-.4-1.3-2.4-1.8-2.3-.5-3.8-1.4-3.8-3.3 0-1.6 1.3-2.7 3.1-3.1V4h2v2.1c1.9.4 2.9 1.9 3 3.4h-2.1c-.1-1-.6-1.6-2-1.6-1.3 0-2 .6-2 1.4 0 .7.5 1.1 2.4 1.6s3.8 1.3 3.8 3.5c0 1.6-1.2 2.9-3.1 3.2z"/></svg>
+						<h3>Чесні ціни</h3>
+						<p>Погоджуємо вартість до початку ремонту.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="wrap">
+				<h2>Наш сервіс</h2>
+				<div class="gallery" tabindex="0" aria-label="Фото сервісу, гортайте вбік">
+					<img src="img/gallery-1-800.jpg" width="800" height="533" alt="Бокс №1" loading="lazy" decoding="async">
+					<img src="img/gallery-2-800.jpg" width="800" height="533" alt="Підйомник" loading="lazy" decoding="async">
+					<img src="img/gallery-3-800.jpg" width="800" height="533" alt="Зона очікування" loading="lazy" decoding="async">
+					<img src="img/hero-800.jpg" width="800" height="533" alt="Майстерня" loading="lazy" decoding="async">
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="wrap">
+				<h2>Часті питання</h2>
+				<div class="faq">
+					<details open><summary>Чи можна приїхати без запису?</summary><p>Так, але з записом ви не чекатимете в черзі.</p></details>
+					<details><summary>Чи можна принести свої запчастини?</summary><p>Так, але гарантія тоді діє лише на роботу.</p></details>
+					<details><summary>Скільки триває діагностика?</summary><p>Комп’ютерна діагностика — близько 30 хвилин.</p></details>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="wrap">
+				<h2>Як нас знайти</h2>
+				<div class="map">
+					<b>вул. Прикладна, 5, Луцьк</b>
+					<a href="https://www.google.com/maps/search/?api=1&amp;query=%D0%9B%D1%83%D1%86%D1%8C%D0%BA" target="_blank" rel="noopener">Відкрити в Google Maps →</a>
+				</div>
+				<p class="center"><a class="btn" href="tel:+380000000000"><svg><use href="#i-phone"/></svg>Подзвонити: +380 00 000 00 00</a></p>
+			</div>
+		</section>
+	</main>
+
+	<footer>© СТО «Мотор», Луцьк. Демо-сторінка «після» для кейсу з оптимізації швидкості.</footer>
+</body>
+</html>
